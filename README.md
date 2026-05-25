@@ -150,10 +150,10 @@ $$
 $$
 
 where:
-- \(c\) = indoxyl sulfate (IS) concentration
-- \(D\) = diffusion coefficient
-- \(\mathbf{u}\) = velocity field
-- \(R(c,V_{\max},K_m)\) = cellular uptake term
+- $c$ = indoxyl sulfate (IS) concentration
+- $D$ = diffusion coefficient
+- $\mathbf{u}$ = velocity field
+- $R(c,V_{\max},K_m)$ = cellular uptake term
 
 The simulations were implemented using the *Transport of Diluted Species* interface in COMSOL Multiphysics 6.3.
 
@@ -191,8 +191,8 @@ R_{\mathrm{uptake}} = V_{\max}\frac{c}{K_m+c}
 $$
 
 with:
-- \(V_{\max}=10^6\ \mu\mathrm{mol\,L^{-1}\,min^{-1}}\)
-- \(K_m=20\ \mu\mathrm{M}\)
+- $V_{\max}=10^6\ \mu\mathrm{mol\,L^{-1}\,min^{-1}}$
+- $K_m=20\ \mu\mathrm{M}$
 
 Additional simulations were performed with varying \(V_{\max}\) values to evaluate the influence of active transport capacity on overall clearance.
 
@@ -238,8 +238,8 @@ $$
 $$
 
 where:
-- \(A\) = membrane surface area
-- \(C_{in}\) = inlet indoxyl sulfate concentration
+- $A$ = membrane surface area
+- $C_{in}$ = inlet indoxyl sulfate concentration
 
 All clearance values were normalized by membrane surface area to enable comparison between geometries.
 
@@ -267,8 +267,8 @@ R_{\Phi}(t)=
 $$
 
 where:
-- \(R_{\Phi}=1\): active transport has negligible effect
-- \(R_{\Phi}<1\): active transport enhances overall transport
+- $R_{\Phi}=1$: active transport has negligible effect
+- $R_{\Phi}<1$: active transport enhances overall transport
 
 This analysis was used to distinguish passive diffusive transport from transporter-mediated uptake.
 
