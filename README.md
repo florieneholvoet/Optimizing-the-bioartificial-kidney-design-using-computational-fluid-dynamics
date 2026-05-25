@@ -1,5 +1,16 @@
 # Computational Modeling of Protein-Bound Uremic Toxin Transport in Bioartificial Kidney Hollow-Fiber Systems
+**Author:** Floriene Holvoet 
 
+**Supervisors:**  
+- Prof. Dr. ir. Charlotte Debbaut¹  
+- Prof. Dr. ir. Aurélie Carlier²  
+
+**Counsellors:**  
+- Leyla Noroozbabaee²  
+- Jessie Duquesne¹  
+
+¹ Ghent University  
+² Maastricht University
 ## Project Overview
 
 This project investigates the transport and clearance of the protein-bound uremic toxin (PBUT) indoxyl sulfate (IS) in bioartificial kidney hollow-fiber systems using computational fluid dynamics (CFD) simulations in COMSOL Multiphysics.
