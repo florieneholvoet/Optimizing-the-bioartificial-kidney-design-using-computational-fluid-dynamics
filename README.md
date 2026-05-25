@@ -68,7 +68,7 @@ Transport mechanisms:
 - Diffusion
 - Michaelis–Menten active uptake
 
-### Governing Transport Equation
+## Governing Transport Equation
 
 $$
 \frac{\partial c}{\partial t}
@@ -79,6 +79,8 @@ D\nabla^2 c
 +
 R(c)
 $$
+
+## Active Uptake Model
 
 $$
 R_{\mathrm{uptake}}
