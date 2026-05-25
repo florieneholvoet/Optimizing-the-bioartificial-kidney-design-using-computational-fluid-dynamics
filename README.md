@@ -70,24 +70,15 @@ Transport mechanisms:
 
 ## Governing Transport Equation
 
-$$
-\frac{\partial c}{\partial t}
-+
-\mathbf{u}\cdot\nabla c
-=
-D\nabla^2 c
-+
-R(c)
-$$
+```math
+\frac{\partial c}{\partial t} + \mathbf{u}\cdot\nabla c = D\nabla^2 c + R(c)
+```
 
 ## Active Uptake Model
 
-$$
-R_{\mathrm{uptake}}
-=
-V_{\max}\frac{c}{K_m+c}
-$$
-
+```math
+R_{\mathrm{uptake}} = V_{\max}\frac{c}{K_m+c}
+```
 ---
 
 ## Geometries
