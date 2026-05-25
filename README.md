@@ -144,7 +144,10 @@ Each configuration was evaluated under:
 
 Transport of indoxyl sulfate (IS) was modeled using the convection–diffusion–reaction equation:
 
-dC/dt + u·∇C = D∇²C + R(c,Vmax,Km)
+$$
+\frac{\partial c}{\partial t} + \mathbf{u}\cdot\nabla c
+= D\nabla^2 c + R(c,V_{\max},K_m)
+$$
 
 where:
 - c = IS concentration
@@ -183,7 +186,9 @@ Fully developed parabolic inlet velocity profiles were imposed at the blood and 
 
 Active uptake within the epithelial cell layer was modeled using Michaelis–Menten kinetics:
 
-R_uptake = Vmax · c / (Km + c)
+$$
+R_{\mathrm{uptake}} = V_{\max}\frac{c}{K_m+c}
+$$
 
 - Vmax = 10^6 μmol·L^-1·min^-1
 - Km = 20 μM
@@ -219,11 +224,18 @@ Post-processing and transport analysis were performed in Python.
 
 Clearance was quantified using the total molar transport rate across the blood–membrane interface:
 
-ṅ_M(t) = ∫ J_n dΓ
+$$
+\dot{n}_M(t)=\int_{\Gamma_M} J_n\, d\Gamma
+$$
 
 A time-averaged clearance metric was defined as:
 
-CL_avg(t) = (1 / (t·A·Cin)) · ∫ ṅ_M(τ) dτ
+$$
+\overline{CL}(t)
+=
+\frac{1}{tAC_{in}}
+\int_0^t \dot{n}_M(\tau)\,d\tau
+$$
 
 - A = membrane surface area
 - Cin = inlet IS concentration
@@ -244,7 +256,14 @@ To quantify the contribution of active transport, simulations with and without M
 
 The passive transport contribution ratio was defined as:
 
-R_Φ(t) = |Φ_(Vmax=0)| / |Φ_full|
+$$
+R_{\Phi}(t)=
+\frac{
+|\Phi_{V_{\max}=0}(t)|
+}{
+|\Phi_{\mathrm{full}}(t)|
+}
+$$
 
 - RΦ = 1 → active transport has negligible effect
 - RΦ < 1 → active transport enhances overall transport
@@ -255,14 +274,23 @@ This analysis was used to distinguish passive diffusive transport from transport
 
 # Main Findings
 
-Key observations from the simulations include:
+Key findings from the simulations include:
 
-- Countercurrent dialysate flow substantially enhances indoxyl sulfate clearance.
-- Inside-out multifiber configurations exhibit near-linear scaling behavior.
-- Outside-in configurations are more sensitive to concentration-gradient limitations.
-- Active Michaelis–Menten transport only dominates overall transport at sufficiently high uptake capacities.
-- Membrane-area normalization is essential for fair comparison between geometries.
-- Multifiber interactions significantly influence local concentration gradients and transport efficiency.
+- Under static dialysate conditions, the inside-out configuration maintained the transmembrane concentration gradient substantially longer than the outside-in configuration due to the larger surrounding dialysate volume, resulting in higher sustained clearance.
+
+- Countercurrent dialysate flow strongly enhanced transport performance by suppressing dialysate saturation and maintaining concentration gradients along the fiber length. However, only minor differences were observed between cocurrent and countercurrent operation because the investigated fiber lengths were relatively short.
+
+- Under flow conditions, the original outside-in configuration achieved the highest area-normalized clearance (~9.5 μL/(min·cm²)) due to the strongest local blood-to-membrane concentration gradients.
+
+- The adjusted outside-in configuration exhibited the largest total transport capacity because of its substantially increased membrane and cell-layer surface area, despite weaker local concentration gradients.
+
+- Membrane-area normalization strongly influenced the interpretation of clearance performance. Configurations with larger membrane areas showed lower area-normalized clearance despite higher total solute transport.
+
+- The transport behavior remained predominantly diffusion-driven over most investigated parameter ranges. The inlet indoxyl sulfate concentration had the strongest influence on clearance, followed by the dialysate flow rate, whereas blood flow rate and moderate changes in Vmax produced comparatively limited effects.
+
+- Active Michaelis--Menten transport contributed only minimally at Vmax = 10^6 μmol/(L·min), but became increasingly important once Vmax ≥ 10^8 μmol/(L·min).
+
+- Relative to the corresponding single-fiber configuration, the inside-out multifiber geometry showed an approximately linear increase in total clearance with the number of fibers, whereas the outside-in multifiber geometry exhibited substantially weaker scaling due to reduced blood-to-membrane concentration gradients in the multifiber configuration.
 
 ---
 
