@@ -97,7 +97,7 @@ Three dialysate conditions were investigated:
 Countercurrent flow was introduced to maintain concentration gradients along the fiber length and enhance solute transport.
 ### Inside-out countercurrent configuration
 <p align="center">
-  <img src="figures/inside_out_countercurrent.png" width="750">
+  <img src="figures/inside_out_countercurrent (1).png" width="750">
 </p>
 
 <p align="center">
@@ -108,7 +108,7 @@ Countercurrent flow was introduced to maintain concentration gradients along the
 
 ### Outside-in countercurrent configuration
 <p align="center">
-  <img src="figures/outside_in_countercurrent.png" width="750">
+  <img src="figures/outside_in_countercurrent (1).png" width="750">
 </p>
 
 <p align="center">
