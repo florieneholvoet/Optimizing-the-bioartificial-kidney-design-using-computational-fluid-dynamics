@@ -96,11 +96,24 @@ R_{\mathrm{uptake}} = V_{\max}\frac{c}{K_m+c}
 
 ## Geometries
 
+### Inside–Out and Outside–In Hollow-Fiber Configurations
+
+<p align="center">
+  <img src="figures/configurations_BAK%20(2).png" width="700">
+</p>
+
+<p align="center">
+  <em>
+  Cross-sectional representation of a single hollow fiber illustrating the inside–out (left) 
+  and outside–in (right) bioartificial kidney configurations. 
+  Colors denote the different domains: blood (red), membrane (blue), 
+  cell layer (pink), and dialysate (yellow).
+  </em>
+</p>
+
 ### Inside–Out Configuration
 
-Blood flows through the lumen while dialysate flows externally.
-
-![Inside-Out](figures/configurations_BAK.png)
+Blood flows through the lumen of the hollow fiber while dialysate flows through the extracapillary space.
 
 ### Outside–In Configuration
 
