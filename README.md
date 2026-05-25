@@ -28,13 +28,25 @@ Conventional dialysis therapies remain inefficient at removing protein-bound ure
 
 Bioartificial kidneys aim to restore active tubular secretion by integrating proximal tubule epithelial cells (PTECs) expressing OAT1 transporters into hollow-fiber systems.
 
+<p align="center">
+  <img src="figures/bioartificial_kidney%20(3).png" width="700">
+</p>
+
+<p align="center">
+  <em>
+  Schematic representation of a bioartificial kidney integrated with a conventional dialysis filter. 
+  After conventional dialysis removes small and medium-sized solutes, blood enters the bioartificial kidney, 
+  where OAT1-expressing proximal tubule epithelial cells actively transport protein-bound uremic toxins 
+  across hollow-fiber membranes before the blood is returned to the patient.
+  </em>
+</p>
+
 This project develops a CFD framework to investigate:
 - Flow behavior
 - Concentration gradients
 - Active toxin uptake
 - Dialysate washout
 - Geometric optimization
-
 ---
 
 ## Research Questions
