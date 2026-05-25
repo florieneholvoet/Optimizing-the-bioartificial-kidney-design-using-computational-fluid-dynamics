@@ -123,21 +123,13 @@ Each configuration was evaluated under:
 
 Transport of indoxyl sulfate (IS) was modeled using the convection–diffusion–reaction equation:
 
-$$
-\frac{\partial c}{\partial t}
-+
-\mathbf{u}\cdot\nabla c
-=
-D\nabla^2 c
-+
-R(c,V_{\max},K_m)
-$$
+dC/dt + u·∇C = D∇²C + R(c,Vmax,Km)
 
 where:
-- \(c\) is the IS concentration,
-- \(D\) is the diffusion coefficient,
-- \(\mathbf{u}\) is the velocity field,
-- \(R(c)\) represents cellular uptake.
+- c = IS concentration
+- D = diffusion coefficient
+- u = velocity field
+- R(c,Vmax,Km) = cellular uptake term
 
 The simulations were implemented using the *Transport of Diluted Species* interface in COMSOL Multiphysics 6.3.
 
@@ -170,15 +162,10 @@ Fully developed parabolic inlet velocity profiles were imposed at the blood and 
 
 Active uptake within the epithelial cell layer was modeled using Michaelis–Menten kinetics:
 
-$$
-R_{\mathrm{uptake}}
-=
-V_{\max}\frac{c}{K_m+c}
-$$
+R_uptake = Vmax · c / (Km + c)
 
-with:
-- \(V_{\max}=10^6\ \mu\mathrm{mol\,L^{-1}\,min^{-1}}\)
-- \(K_m=20\ \mu\mathrm{M}\)
+- Vmax = 10^6 μmol·L^-1·min^-1
+- Km = 20 μM
 
 Additional simulations were performed with varying \(V_{\max}\) values to evaluate the influence of active transport capacity on overall clearance.
 
@@ -211,24 +198,14 @@ Post-processing and transport analysis were performed in Python.
 
 Clearance was quantified using the total molar transport rate across the blood–membrane interface:
 
-$$
-\dot{n}_M(t)
-=
-\int_{\Gamma_M} J_n\, d\Gamma
-$$
+ṅ_M(t) = ∫ J_n dΓ
 
 A time-averaged clearance metric was defined as:
 
-$$
-\overline{CL}(t)
-=
-\frac{1}{tAC_{in}}
-\int_0^t \dot{n}_M(\tau)\,d\tau
-$$
+CL_avg(t) = (1 / (t·A·Cin)) · ∫ ṅ_M(τ) dτ
 
-where:
-- \(A\) is the membrane surface area,
-- \(C_{in}\) is the inlet IS concentration.
+- A = membrane surface area
+- Cin = inlet IS concentration
 
 All clearance values were normalized by membrane surface area to enable comparison between geometries.
 
@@ -246,19 +223,10 @@ To quantify the contribution of active transport, simulations with and without M
 
 The passive transport contribution ratio was defined as:
 
-$$
-R_{\Phi}(t)
-=
-\frac{
-|\Phi_{V_{\max}=0}(t)|
-}{
-|\Phi_{\mathrm{full}}(t)|
-}
-$$
+R_Φ(t) = |Φ_(Vmax=0)| / |Φ_full|
 
-where:
-- \(R_\Phi=1\): active transport has negligible effect,
-- \(R_\Phi<1\): active transport enhances overall transport.
+- RΦ = 1 → active transport has negligible effect
+- RΦ < 1 → active transport enhances overall transport
 
 This analysis was used to distinguish passive diffusive transport from transporter-mediated uptake.
 
