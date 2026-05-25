@@ -95,6 +95,27 @@ Three dialysate conditions were investigated:
 - countercurrent flow.
 
 Countercurrent flow was introduced to maintain concentration gradients along the fiber length and enhance solute transport.
+### Inside-out countercurrent configuration
+<p align="center">
+  <img src="figures/inside_out_countercurrent.png" width="750">
+</p>
+
+<p align="center">
+  <em>
+  Figure: Inside-out countercurrent flow configuration, with blood flow in the lumen and dialysate flow imposed in the opposite direction in the outer compartment.
+  </em>
+</p>
+
+### Outside-in countercurrent configuration
+<p align="center">
+  <img src="figures/outside_in_countercurrent.png" width="750">
+</p>
+
+<p align="center">
+  <em>
+  Figure: Outside-in countercurrent flow configuration, with blood flow in the outer domain and dialysate flow imposed in the opposite direction through the lumen.
+  </em>
+</p>
 
 ---
 
