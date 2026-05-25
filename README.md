@@ -123,15 +123,15 @@ Each configuration was evaluated under:
 
 Transport of indoxyl sulfate (IS) was modeled using the convection–diffusion–reaction equation:
 
-\[
+$$
 \frac{\partial c}{\partial t}
 +
 \mathbf{u}\cdot\nabla c
 =
 D\nabla^2 c
 +
-R(c)
-\]
+R(c,V_{\max},K_m)
+$$
 
 where:
 - \(c\) is the IS concentration,
@@ -170,11 +170,11 @@ Fully developed parabolic inlet velocity profiles were imposed at the blood and 
 
 Active uptake within the epithelial cell layer was modeled using Michaelis–Menten kinetics:
 
-\[
+$$
 R_{\mathrm{uptake}}
 =
 V_{\max}\frac{c}{K_m+c}
-\]
+$$
 
 with:
 - \(V_{\max}=10^6\ \mu\mathrm{mol\,L^{-1}\,min^{-1}}\)
@@ -211,20 +211,20 @@ Post-processing and transport analysis were performed in Python.
 
 Clearance was quantified using the total molar transport rate across the blood–membrane interface:
 
-\[
+$$
 \dot{n}_M(t)
 =
 \int_{\Gamma_M} J_n\, d\Gamma
-\]
+$$
 
 A time-averaged clearance metric was defined as:
 
-\[
+$$
 \overline{CL}(t)
 =
 \frac{1}{tAC_{in}}
 \int_0^t \dot{n}_M(\tau)\,d\tau
-\]
+$$
 
 where:
 - \(A\) is the membrane surface area,
@@ -246,7 +246,7 @@ To quantify the contribution of active transport, simulations with and without M
 
 The passive transport contribution ratio was defined as:
 
-\[
+$$
 R_{\Phi}(t)
 =
 \frac{
@@ -254,7 +254,7 @@ R_{\Phi}(t)
 }{
 |\Phi_{\mathrm{full}}(t)|
 }
-\]
+$$
 
 where:
 - \(R_\Phi=1\): active transport has negligible effect,
