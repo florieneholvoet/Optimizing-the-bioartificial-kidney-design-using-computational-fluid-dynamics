@@ -192,7 +192,6 @@ $$
 
 with:
 - $V_{\max}=10^6\ \mu\mathrm{mol\ L^{-1}\ min^{-1}}$
-- $V_{\max} = 10^6\ \mu\text{mol}\,\text{L}^{-1}\,\text{min}^{-1}$
 - $K_m=20\ \mu\mathrm{M}$
 
 Additional simulations were performed with varying $V_{\max}$ values to evaluate the influence of active transport capacity on overall clearance.
