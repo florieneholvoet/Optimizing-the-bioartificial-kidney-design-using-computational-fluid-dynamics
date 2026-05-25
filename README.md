@@ -1,32 +1,26 @@
-# Optimizing the bioartificial kidney design using computational-fluid dynamics
+# Computational Modeling of Protein-Bound Uremic Toxin Transport in Bioartificial Kidney Hollow-Fiber Systems
 
+## Project Overview
 
-## Overview
+This project investigates the transport and clearance of the protein-bound uremic toxin (PBUT) indoxyl sulfate (IS) in bioartificial kidney hollow-fiber systems using computational fluid dynamics (CFD) simulations in COMSOL Multiphysics.
 
-This project investigates indoxyl sulfate (IS) transport and clearance in a bioartificial kidney (BAK) using computational fluid dynamics (CFD).
+The work compares inside-out and outside-in hollow-fiber configurations under static, cocurrent, and countercurrent dialysate conditions. Active cellular uptake was incorporated using Michaelis–Menten kinetics to represent organic anion transporter (OAT1)-mediated transport.
 
-The work focuses on:
-- Protein-bound uremic toxin (PBUT) transport
-- OAT1-mediated active transport
-- Hollow-fiber bioartificial kidney geometries
-- Coupled convection–diffusion–reaction modeling
-- CFD-based transport optimization
+The simulations evaluate:
+- geometric effects,
+- blood-volume scaling,
+- dialysate flow conditions,
+- multifiber interactions,
+- and the contribution of active transport mechanisms.
 
-The developed framework combines:
-- Fluid flow
-- Solute diffusion
-- Michaelis–Menten uptake kinetics
-- Hollow-fiber membrane transport
-
-The objective is to improve understanding of how geometry, flow configuration, and active transport influence PBUT clearance in future bioartificial kidney devices.
+Post-processing and transport analysis were performed in Python.
 
 ---
 
-## Background
+# Background
 
-Conventional dialysis therapies remain inefficient at removing protein-bound uremic toxins because only the free toxin fraction can cross dialysis membranes.
+Protein-bound uremic toxins (PBUTs), such as indoxyl sulfate (IS), are poorly removed by conventional dialysis therapies because only the free toxin fraction can diffuse across the dialysis membrane. In the native kidney, PBUT removal occurs primarily through active tubular secretion mediated by organic anion transporters (OATs) expressed in proximal tubule epithelial cells (PTECs).
 
-Bioartificial kidneys aim to restore active tubular secretion by integrating proximal tubule epithelial cells (PTECs) expressing OAT1 transporters into hollow-fiber systems.
 
 <p align="center">
   <img src="figures/bioartificial_kidney%20(3).png" width="700">
@@ -42,144 +36,256 @@ Bioartificial kidneys aim to restore active tubular secretion by integrating pro
   </em>
 </p>
 
-This project develops a CFD framework to investigate:
-- Flow behavior
-- Concentration gradients
-- Active toxin uptake
-- Dialysate washout
-- Geometric optimization
----
 
-## Research Questions
+Bioartificial kidney systems aim to restore this missing transport functionality by integrating living renal cells with hollow-fiber membrane technology. However, optimizing such systems requires understanding the coupled effects of:
+- geometry,
+- flow conditions,
+- membrane transport,
+- and active cellular uptake.
 
-### Main Research Question
-
-> Can the incorporation of an OAT1-expressing proximal tubule cell layer in hollow-fiber dialysis geometries improve indoxyl sulfate transport and clearance in a bioartificial kidney, as investigated using computational fluid dynamics?
-
-### Subquestions
-
-- How do inside–out and outside–in hollow-fiber configurations differ?
-- What is the effect of stagnant, cocurrent, and countercurrent dialysate conditions?
-- How do flow rate and uptake kinetics influence clearance?
-- What is the contribution of active uptake relative to passive diffusion?
-- How does scaling from single-fiber to multifiber systems affect transport?
+This work uses CFD-based transport modeling to systematically investigate how hollow-fiber configuration and flow conditions influence PBUT transport and clearance performance.
 
 ---
 
-## Methodology
+# Research Questions
 
-A two-dimensional axisymmetric CFD model was developed in COMSOL Multiphysics 6.3.
+This project addresses the following research questions:
 
-The model includes:
-- Blood compartment
-- Porous membrane
-- Cell monolayer
-- Dialysate compartment
+1. How do inside-out and outside-in hollow-fiber configurations influence indoxyl sulfate transport and clearance?
 
-Transport mechanisms:
-- Convection
-- Diffusion
-- Michaelis–Menten active uptake
+2. What is the effect of cocurrent and countercurrent dialysate flow on clearance performance?
 
-## Governing Transport Equation
+3. How does blood-volume scaling affect the comparison between inside-out and outside-in configurations?
 
-```math
-\frac{\partial c}{\partial t} + \mathbf{u}\cdot\nabla c = D\nabla^2 c + R(c)
-```
+4. What is the contribution of active Michaelis–Menten transport relative to passive diffusion?
 
-## Active Uptake Model
-
-```math
-R_{\mathrm{uptake}} = V_{\max}\frac{c}{K_m+c}
-```
----
-
-## Geometries
-
-### Inside–Out and Outside–In Hollow-Fiber Configurations
-
-<p align="center">
-  <img src="figures/configurations_BAK%20(2).png" width="700">
-</p>
-
-<p align="center">
-  <em>
-  Cross-sectional representation of a single hollow fiber illustrating the inside–out (left) 
-  and outside–in (right) bioartificial kidney configurations. 
-  Colors denote the different domains: blood (red), membrane (blue), 
-  cell layer (pink), and dialysate (yellow).
-  </em>
-</p>
-
-### Inside–Out Configuration
-
-Blood flows through the lumen of the hollow fiber while dialysate flows through the extracapillary space.
-
-### Outside–In Configuration
-
-Blood flows through the extracapillary space while dialysate flows through the lumen.
+5. How do multifiber configurations influence concentration gradients and overall transport behavior?
 
 ---
 
-## Simulation Cases
+# Model Overview
 
-The following scenarios were investigated:
+## Geometry
 
-- Static dialysate
-- Cocurrent flow
-- Countercurrent flow
-- Split cell-layer kinetics
-- Multifiber geometries
+Three hollow-fiber configurations were investigated:
 
-Furthermore, a sensitivity analysis was performed to identify the dominant parameters governing indoxyl sulfate transport and clearance performance within the bioartificial kidney system.
+| Configuration | Description |
+|---|---|
+| Inside-out | Blood flows through the lumen while dialysate occupies the outer shell |
+| Outside-in | Blood occupies the outer shell while dialysate flows through the lumen |
+| Adjusted outside-in | Volume-matched variant of the outside-in geometry |
 
----
-## Simulation Settings
+The computational domain consisted of four compartments:
+- blood,
+- membrane,
+- epithelial cell layer,
+- dialysate.
 
-A time–dependent study was performed for 240 minutes. 
-The nonlinear system was solved fully coupled using the PARDISO direct linear solver. Convergence of each time step was controlled using a tolerance-based termination technique. Relative tolerances were physics–controlled.
+Single-fiber simulations were modeled using a 2D axisymmetric geometry to reduce computational cost while preserving the dominant radial transport mechanisms.
 
-For the multifiber models, a two-step solution strategy was adopted. First, the laminar flow equations were solved using a stationary study to obtain a stable velocity field. Subsequently, the Transport of Diluted Species equations were solved using a time–dependent study, with the previously computed velocity field imposed. This approach is justified by the fact that the velocity field remains stable and is not significantly influenced by solute transport, allowing a decoupled solution procedure.
-
----
-
-## Key Results
-
-### Static Dialysate Conditions
-
-- Transport is diffusion dominated
-- Dialysate saturation strongly limits clearance
-- Geometry significantly affects concentration-gradient persistence
-
-### Countercurrent Flow
-
-- Dialysate refreshment maintains concentration gradients
-- Quasi-steady transport behavior develops rapidly
-- Countercurrent operation improves sustained transport
-
-### Geometric Effects
-
-- Outside–in geometries achieved the highest area-normalized clearance
-- Membrane surface area strongly influences total transport
-- Compartment-volume distribution affects gradient collapse
+Multifiber simulations were later extended to 3D configurations containing five repeated fiber units embedded within a shared compartment.
 
 ---
 
-## Example Results
+## Flow Configurations
 
-### Velocity Profiles
+Three dialysate conditions were investigated:
+- stagnant dialysate,
+- cocurrent flow,
+- countercurrent flow.
 
-![Velocity](figures/velocity_profiles.png)
-
-### Pressure Profiles
-
-![Pressure](figures/pressure_profiles.png)
-
-### Radial Concentration Profiles
-
-![Concentration](figures/radial_concentration_profiles.png)
+Countercurrent flow was introduced to maintain concentration gradients along the fiber length and enhance solute transport.
 
 ---
+
+## Modelling Scenarios
+
+A stepwise modeling strategy was adopted, progressing from single-fiber axisymmetric simulations to multifiber 3D configurations.
+
+| Scenario | Purpose |
+|---|---|
+| Inside-out single fiber | Reference configuration |
+| Outside-in single fiber | Geometric inversion |
+| Adjusted outside-in | Volume-matched comparison |
+| Cell-layer split model | Separate basolateral/apical transport behavior |
+| Multifiber models | Fiber interaction effects |
+
+Each configuration was evaluated under:
+- static dialysate conditions,
+- cocurrent flow,
+- countercurrent flow.
+
+---
+
+# Mathematical Model
+
+## General Transport Equation
+
+Transport of indoxyl sulfate (IS) was modeled using the convection–diffusion–reaction equation:
+
+\[
+\frac{\partial c}{\partial t}
++
+\mathbf{u}\cdot\nabla c
+=
+D\nabla^2 c
++
+R(c)
+\]
+
+where:
+- \(c\) is the IS concentration,
+- \(D\) is the diffusion coefficient,
+- \(\mathbf{u}\) is the velocity field,
+- \(R(c)\) represents cellular uptake.
+
+The simulations were implemented using the *Transport of Diluted Species* interface in COMSOL Multiphysics 6.3.
+
+---
+
+## Domain-Specific Transport Mechanisms
+
+| Domain | Convection | Diffusion | Reaction |
+|---|---|---|---|
+| Blood | Yes | Yes | No |
+| Membrane | No | Yes | No |
+| Cell layer | No | Yes | Michaelis–Menten uptake |
+| Dialysate | Optional | Yes | No |
+
+Transport in the blood and dialysate compartments included both convection and diffusion, while the membrane and cell layer were modeled as diffusion-dominated regions.
+
+---
+
+## Flow Model
+
+Fluid motion in the blood and dialysate compartments was modeled using the incompressible Navier–Stokes equations under laminar conditions.
+
+Countercurrent and cocurrent dialysate configurations were investigated. Reynolds number analysis confirmed laminar flow behavior for all simulated cases.
+
+Fully developed parabolic inlet velocity profiles were imposed at the blood and dialysate inlets.
+
+---
+
+## Active Michaelis–Menten Transport
+
+Active uptake within the epithelial cell layer was modeled using Michaelis–Menten kinetics:
+
+\[
+R_{\mathrm{uptake}}
+=
+V_{\max}\frac{c}{K_m+c}
+\]
+
+with:
+- \(V_{\max}=10^6\ \mu\mathrm{mol\,L^{-1}\,min^{-1}}\)
+- \(K_m=20\ \mu\mathrm{M}\)
+
+Additional simulations were performed with varying \(V_{\max}\) values to evaluate the influence of active transport capacity on overall clearance.
+
+A split cell-layer model was also investigated to distinguish between basolateral and apical transport behavior.
+
+---
+
+# Numerical Implementation
+
+Simulations were performed in COMSOL Multiphysics 6.3 using time-dependent studies.
+
+The nonlinear systems were solved using:
+- fully coupled formulation,
+- PARDISO direct solver,
+- tolerance-controlled convergence.
+
+For multifiber simulations, a two-step strategy was used:
+1. stationary solution of the laminar flow field,
+2. time-dependent solution of species transport.
+
+Mesh independence was verified through mesh sensitivity analysis for all configurations.
+
+Post-processing and transport analysis were performed in Python.
+
+---
+
+# Quantification of Transport and Clearance
+
+## Clearance Definition
+
+Clearance was quantified using the total molar transport rate across the blood–membrane interface:
+
+\[
+\dot{n}_M(t)
+=
+\int_{\Gamma_M} J_n\, d\Gamma
+\]
+
+A time-averaged clearance metric was defined as:
+
+\[
+\overline{CL}(t)
+=
+\frac{1}{tAC_{in}}
+\int_0^t \dot{n}_M(\tau)\,d\tau
+\]
+
+where:
+- \(A\) is the membrane surface area,
+- \(C_{in}\) is the inlet IS concentration.
+
+All clearance values were normalized by membrane surface area to enable comparison between geometries.
+
+Additional transport metrics were evaluated to identify transport bottlenecks between:
+- blood,
+- membrane,
+- cell layer,
+- dialysate.
+
+---
+
+## Contribution of Active Transport
+
+To quantify the contribution of active transport, simulations with and without Michaelis–Menten uptake were compared.
+
+The passive transport contribution ratio was defined as:
+
+\[
+R_{\Phi}(t)
+=
+\frac{
+|\Phi_{V_{\max}=0}(t)|
+}{
+|\Phi_{\mathrm{full}}(t)|
+}
+\]
+
+where:
+- \(R_\Phi=1\): active transport has negligible effect,
+- \(R_\Phi<1\): active transport enhances overall transport.
+
+This analysis was used to distinguish passive diffusive transport from transporter-mediated uptake.
+
+---
+
+# Main Findings
+
+Key observations from the simulations include:
+
+- Countercurrent dialysate flow substantially enhances indoxyl sulfate clearance.
+- Inside-out multifiber configurations exhibit near-linear scaling behavior.
+- Outside-in configurations are more sensitive to concentration-gradient limitations.
+- Active Michaelis–Menten transport only dominates overall transport at sufficiently high uptake capacities.
+- Membrane-area normalization is essential for fair comparison between geometries.
+- Multifiber interactions significantly influence local concentration gradients and transport efficiency.
+
+---
+
+# Repository Structure
+
+```text
+├── COMSOL_models/
+├── Python_postprocessing/
+├── Figures/
+├── Mesh_sensitivity/
+├── Results/
+└── README.md
 
 
 ## Software
