@@ -191,10 +191,11 @@ R_{\mathrm{uptake}} = V_{\max}\frac{c}{K_m+c}
 $$
 
 with:
-- $V_{\max}=10^6\ \mu\mathrm{mol\,L^{-1}\,min^{-1}}$
+- $V_{\max}=10^6\ \mu\mathrm{mol\ L^{-1}\ min^{-1}}$
+- $V_{\max} = 10^6\ \mu\text{mol}\,\text{L}^{-1}\,\text{min}^{-1}$
 - $K_m=20\ \mu\mathrm{M}$
 
-Additional simulations were performed with varying \(V_{\max}\) values to evaluate the influence of active transport capacity on overall clearance.
+Additional simulations were performed with varying $V_{\max}$ values to evaluate the influence of active transport capacity on overall clearance.
 
 A split cell-layer model was also investigated to distinguish between basolateral and apical transport behavior.
 
