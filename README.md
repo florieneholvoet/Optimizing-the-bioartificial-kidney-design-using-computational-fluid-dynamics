@@ -38,6 +38,7 @@ Bioartificial kidneys aim to restore active tubular secretion by integrating pro
   After conventional dialysis removes small and medium-sized solutes, blood enters the bioartificial kidney, 
   where OAT1-expressing proximal tubule epithelial cells actively transport protein-bound uremic toxins 
   across hollow-fiber membranes before the blood is returned to the patient.
+  Adapted from Ramada et al. (2023) [1].
   </em>
 </p>
 
@@ -179,6 +180,11 @@ For the multifiber models, a two-step solution strategy was adopted. First, the 
 
 ## References
 
-Key references include:
-- Refoyo et al.
+---
+
+## References
+
+1. Ramada, M., et al. *Portable, wearable and implantable artificial kidney systems: needs, opportunities and challenges.*  
+   **Nature Reviews Nephrology** 19(8), 481–490 (2023).  
+   https://doi.org/10.1038/s41581-023-00726-9
 
