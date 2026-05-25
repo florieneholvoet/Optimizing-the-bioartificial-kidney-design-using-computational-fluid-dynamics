@@ -70,7 +70,7 @@ Transport mechanisms:
 
 ### Governing Transport Equation
 
-\[
+$$
 \frac{\partial c}{\partial t}
 +
 \mathbf{u}\cdot\nabla c
@@ -78,15 +78,13 @@ Transport mechanisms:
 D\nabla^2 c
 +
 R(c)
-\]
+$$
 
-### Active Uptake Model
-
-\[
+$$
 R_{\mathrm{uptake}}
 =
 V_{\max}\frac{c}{K_m+c}
-\]
+$$
 
 ---
 
@@ -113,7 +111,16 @@ The following scenarios were investigated:
 - Countercurrent flow
 - Split cell-layer kinetics
 - Multifiber geometries
-- Sensitivity analysis
+
+Furthermore, a sensitivity analysis was performed to identify the dominant parameters governing indoxyl sulfate transport and clearance performance within the bioartificial kidney system.
+
+---
+## Simulation Settings
+
+A time–dependent study was performed for 240 minutes. 
+The nonlinear system was solved fully coupled using the PARDISO direct linear solver. Convergence of each time step was controlled using a tolerance-based termination technique. Relative tolerances were physics–controlled.
+
+For the multifiber models, a two-step solution strategy was adopted. First, the laminar flow equations were solved using a stationary study to obtain a stable velocity field. Subsequently, the Transport of Diluted Species equations were solved using a time–dependent study, with the previously computed velocity field imposed. This approach is justified by the fact that the velocity field remains stable and is not significantly influenced by solute transport, allowing a decoupled solution procedure.
 
 ---
 
@@ -155,49 +162,18 @@ The following scenarios were investigated:
 
 ---
 
-## Repository Structure
-
-```text
-figures/           → Simulation figures and visualizations
-comsol_models/     → COMSOL simulation files
-results/           → Processed simulation outputs
-scripts/           → Postprocessing and plotting scripts
-documentation/     → Thesis and reports
-references/        → Literature and bibliography
-```
-
----
 
 ## Software
 
 - COMSOL Multiphysics 6.3
-- MATLAB / Python
+- Python
 - LaTeX
 
 ---
 
-## Future Work
-
-- Full nephron-scale modeling
-- Dynamic protein binding kinetics
-- Experimental validation
-- Multi-physics coupling
-- AI-assisted geometry optimization
-
----
-
-## Author
-
-Floriene Holvoet
-
-Master Thesis — Bioartificial Kidney CFD Modeling
-
----
 
 ## References
 
 Key references include:
-- Faria et al.
 - Refoyo et al.
-- Ramada et al.
-- Vanholder et al.
+
