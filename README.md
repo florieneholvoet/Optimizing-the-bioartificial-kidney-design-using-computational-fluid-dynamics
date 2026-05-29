@@ -306,44 +306,38 @@ Key findings from the simulations include:
 
 # Figure Reproducibility Overview
 
-The figures in this repository were generated from COMSOL-exported data using Python post-processing scripts. The table below links each figure used in the thesis to the corresponding Python script.
+The figures included in this repository were generated from data exported from COMSOL Multiphysics and processed using Python post-processing scripts. The table below provides an overview of the figures used in the thesis and their corresponding Python scripts.
 
-| Figure file | Description | Python script |
+All Python scripts are located in the src folder. The required input data files can be found in the data folder, organized under the corresponding Python script name. Each subfolder contains the .txt files needed to run the associated Python code and reproduce the figures.
+
+| Figure | Description | Python script |
 |---|---|---|
-| `figures/MSA_insideout_hor.png` | Mesh sensitivity analysis: inside-out horizontal refinement | `Python_postprocessing/mesh_sensitivity_analysis.py` |
-| `figures/MSA_insideout_dial.png` | Mesh sensitivity analysis: inside-out dialysate refinement | `Python_postprocessing/mesh_sensitivity_analysis.py` |
-| `figures/radialconcentrationprofile_IO_baseline.png` | Static radial concentration profile: inside-out | `Python_postprocessing/radial_profiles_static.py` |
-| `figures/radialconcentrationprofile_OI_baseline.png` | Static radial concentration profile: outside-in | `Python_postprocessing/radial_profiles_static.py` |
-| `figures/radialconcentrationprofile_adjustedOI_baseline.png` | Static radial concentration profile: adjusted outside-in | `Python_postprocessing/radial_profiles_static.py` |
-| `figures/radialconcentrationdistribution_outsideincountercurrentflow_0.5mm.png` | Outside-in countercurrent radial profile at `z = 0.5 mm` | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/radialconcentrationdistribution_outsideincountercurrentflow_5mm.png` | Outside-in countercurrent radial profile at `z = 5 mm` | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/radialconcentrationdistribution_outsideincountercurrentflow_10mm.png` | Outside-in countercurrent radial profile at `z = 10 mm` | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/radialconcentrationdistribution_outsideincountercurrentflow_15mm.png` | Outside-in countercurrent radial profile at `z = 15 mm` | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/radialconcentrationdistribution_outsideincountercurrentflow_19.5mm.png` | Outside-in countercurrent radial profile at `z = 19.5 mm` | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/radialconcentrationprofile_IO_countercurrent.png` | Inside-out countercurrent radial concentration profile | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/radialconcentrationprofile_IO_countercurrent_zoom.png` | Inside-out countercurrent zoom at cell-dialysate interface | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/radialconcentrationprofile_adjustedOI_countercurrent.png` | Adjusted outside-in countercurrent radial concentration profile | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/radialconcentrationprofile_adjustedOI_countercurrent_zoom.png` | Adjusted outside-in countercurrent zoom at cell-dialysate interface | `Python_postprocessing/radial_profiles_countercurrent.py` |
-| `figures/running_clearance_baseline.png` | Time-average clearance under static dialysate conditions | `Python_postprocessing/clearance_analysis.py` |
-| `figures/dialysate_based_clearance.png` | Dialysate-based clearance under static dialysate conditions | `Python_postprocessing/clearance_analysis.py` |
-| `figures/running_clearance_countercurrent.png` | Time-average clearance under countercurrent dialysate flow | `Python_postprocessing/clearance_analysis.py` |
-| `figures/model_derived_clearance.png` | End point time-average clearance normalized by membrane area | `Python_postprocessing/clearance_summary.py` |
-| `figures/model_derived_clearance_nonormalized.png` | End point time-average clearance without membrane-area normalization | `Python_postprocessing/clearance_summary.py` |
-| `figures/insideout_cocurrent_profile.png` | Axial concentration profile for extended cocurrent inside-out model | `Python_postprocessing/flow_direction_analysis.py` |
-| `figures/insideout_countercurrent_profile.png` | Axial concentration profile for extended countercurrent inside-out model | `Python_postprocessing/flow_direction_analysis.py` |
-| `figures/insideout_gradient_difference_extended.png` | Axial concentration-difference comparison for extended geometry | `Python_postprocessing/flow_direction_analysis.py` |
-| `figures/sensitivity_vmax.png` | Sensitivity of clearance to `Vmax` | `Python_postprocessing/parameter_sensitivity.py` |
-| `figures/sensitivity_vmax_celltodialysate.png` | Sensitivity of cell-to-dialysate flux to `Vmax` | `Python_postprocessing/parameter_sensitivity.py` |
-| `figures/vmax_radial_profiles.png` | Radial concentration profiles for low and high `Vmax` | `Python_postprocessing/parameter_sensitivity.py` |
-| `figures/sensitivity_cis.png` | Sensitivity of clearance to inlet IS concentration | `Python_postprocessing/parameter_sensitivity.py` |
-| `figures/sensitivity_qblood.png` | Sensitivity of clearance to blood flow rate | `Python_postprocessing/parameter_sensitivity.py` |
-| `figures/sensitivity_qdialysate.png` | Sensitivity of clearance to dialysate flow rate | `Python_postprocessing/parameter_sensitivity.py` |
-| `figures/split_model_clearance.png` | Split cell-layer model: clearance sensitivity to apical `Km` | `Python_postprocessing/split_cell_layer_analysis.py` |
-| `figures/split_model_secretion.png` | Split cell-layer model: cell-to-dialysate transport sensitivity to apical `Km` | `Python_postprocessing/split_cell_layer_analysis.py` |
-| `figures/MM_fluxratio_Vmax1e6.png` | Michaelis-Menten contribution ratio for `Vmax = 10^6` | `Python_postprocessing/MM_transport_contribution.py` |
-| `figures/MM_fluxratio_Vmax1e9.png` | Michaelis-Menten contribution ratio for `Vmax = 10^9` | `Python_postprocessing/MM_transport_contribution.py` |
-| `figures/clearance_multifiber_total.png` | Total multifiber clearance under countercurrent conditions | `Python_postprocessing/multifiber_clearance.py` |
-| `figures/clearance_multifiber_seperate_fibers.png` | Individual fiber clearance in multifiber configurations | `Python_postprocessing/multifiber_clearance.py` |
+| `Figure 8.6` | Mesh sensitivity analysis | `src/mesh_sensitivity_analysis.py` |
+| `Figure 9.1` | Radial velocity profiles | `src/velocity_and_pressure_analysis.py` |
+| `Figure 9.2` | Axial pressure profiles | `src/velocity_and_pressure_analysis.py` |
+| `Figure 9.3` | Static radial concentration profile: inside-out, outside-in, adjusted outside-in | `src/radial_profiles_static.py` |
+| `Figure 9.5` | Outside-in countercurrent radial concentration profile at different axial positions | `src/radial_profiles_countercurrent.py` |
+| `Figure 9.6` | Inside-out countercurrent radial concentration profile at different axial positions | `src/radial_profiles_countercurrent.py` |
+| `Figure 9.7` | Adjusted outside-in countercurrent radial concentration profile at different axial positions | `src/radial_profiles_countercurrent.py` |
+| `Figure 9.8` | Time-average clearance under static dialysate conditions | `src/clearance_analysis.py` |
+| `Figure 9.9` | Dialysate-based clearance under static dialysate conditions | `src/clearance_analysis.py` |
+| `Figure 9.10` | Time-average clearance under countercurrent dialysate flow | `src/clearance_analysis.py` |
+| `Figure 9.11` | Axial concentration profile for extended cocurrent inside-out model, countercurrent inside-out model and axial concentration-difference comparison | `src/flow_direction_analysis.py` |
+| `Figure 9.12` | End point time-average clearance normalized by membrane area | `src/clearance_analysis.py` |
+| `Figure 9.13` | End point time-average clearance without membrane-area normalization | `src/clearance_analysis.py` |
+| `Figure 9.14` | Sensitivity of clearance to `Vmax` | `src/parameter_sensitivity.py` |
+| `Figure 9.15` | Sensitivity of cell-to-dialysate flux to `Vmax` | `src/parameter_sensitivity.py` |
+| `Figure 9.16` | Radial concentration profiles for low and high `Vmax` | `src/parameter_sensitivity.py` |
+| `Figure 9.17` | Sensitivity of clearance to inlet IS concentration | `src/parameter_sensitivity.py` |
+| `Figure 9.18` | Sensitivity of clearance to blood flow rate | `src/parameter_sensitivity.py` |
+| `Figure 9.19` | Sensitivity of clearance to dialysate flow rate | `src/parameter_sensitivity.py` |
+| `Figure 9.20` | Split cell-layer model: clearance sensitivity to apical `Km` | `src/split_cell_layer_analysis.py` |
+| `Figure 9.21` | Split cell-layer model: cell-to-dialysate transport sensitivity to apical `Km` | `src/split_cell_layer_analysis.py` |
+| `Figure 9.22` | Michaelis-Menten contribution ratio for `Vmax = 10^6` | `src/MM_transport_contribution.py` |
+| `Figure 9.23` | Michaelis-Menten contribution ratio for `Vmax = 10^9` | `src/MM_transport_contribution.py` |
+| `Figure 9.25` | Total multifiber clearance under countercurrent conditions | `src/multifiber_clearance.py` |
+| `Figure 9.26` | Individual fiber clearance in multifiber configurations | `src/multifiber_clearance.py` |
+
 
 ## Software
 
@@ -357,4 +351,8 @@ The figures in this repository were generated from COMSOL-exported data using Py
 1. Ramada, M., et al. *Portable, wearable and implantable artificial kidney systems: needs, opportunities and challenges.*  
    **Nature Reviews Nephrology** 19(8), 481–490 (2023).  
    https://doi.org/10.1038/s41581-023-00726-9
+2. Refoyo, R., Skouras, E.D., Chevtchik, N.V., Stamatialis, D. & Burganos, V.N.
+   Transport and reaction phenomena in multilayer membranes functioning as bioartificial kidney devices.
+   Journal of Membrane Science 565, 61–71 (2018).
+   https://doi.org/10.1016/j.memsci.2018.08.007
 
