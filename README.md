@@ -19,12 +19,13 @@ The work compares inside-out and outside-in hollow-fiber configurations under st
 
 The simulations evaluate:
 - geometric effects,
+- parameter sensitivity analysis,
 - blood-volume scaling,
 - dialysate flow conditions,
 - multifiber interactions,
 - and the contribution of active transport mechanisms.
 
-Post-processing and transport analysis were performed in Python.
+Post-processing were performed in Python.
 
 ---
 
