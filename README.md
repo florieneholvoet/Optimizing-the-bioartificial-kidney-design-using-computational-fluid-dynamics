@@ -292,7 +292,7 @@ Key findings from the simulations include:
 
 - Under flow conditions, the original outside-in configuration achieved the highest area-normalized clearance (~9.5 μL/(min·cm²)) due to the strongest local blood-to-membrane concentration gradients.
 
-- The adjusted outside-in configuration exhibited the largest total transport capacity because of its substantially increased membrane and cell-layer surface area, despite weaker local concentration gradients.
+- The adjusted outside-in configuration exhibited the largest non-area-normalized clearance because of its substantially increased membrane and cell-layer surface area, despite weaker local concentration gradients.
 
 - Membrane-area normalization strongly influenced the interpretation of clearance performance. Configurations with larger membrane areas showed lower area-normalized clearance despite higher total solute transport.
 
@@ -300,7 +300,7 @@ Key findings from the simulations include:
 
 - Active Michaelis--Menten transport contributed only minimally at Vmax = 10^6 μmol/(L·min), but became increasingly important once Vmax ≥ 10^8 μmol/(L·min).
 
-- Relative to the corresponding single-fiber configuration, the inside-out multifiber geometry showed an approximately linear increase in total clearance with the number of fibers, whereas the outside-in multifiber geometry exhibited substantially weaker scaling due to reduced blood-to-membrane concentration gradients in the multifiber configuration.
+- Relative to the corresponding single-fiber configuration, the inside-out multifiber geometry showed an approximately linear increase in total clearance with increasing fiber number. In contrast, the outside-in multifiber geometry exhibited substantially weaker clearance scaling relative to its single-fiber counterpart, owing to reduced blood-to-membrane concentration gradients that developed in the multifiber configuration.
 
 ---
 
