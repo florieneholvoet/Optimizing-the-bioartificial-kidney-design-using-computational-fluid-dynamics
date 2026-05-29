@@ -255,11 +255,7 @@ where:
 
 All clearance values were normalized by membrane surface area to enable comparison between geometries.
 
-Additional transport metrics were evaluated to identify transport bottlenecks between:
-- blood,
-- membrane,
-- cell layer,
-- dialysate.
+
 
 ---
 
