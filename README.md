@@ -298,11 +298,13 @@ Key findings from the simulations include:
 
 - Membrane-area normalization strongly influenced the interpretation of clearance performance. Configurations with larger membrane areas showed lower area-normalized clearance despite higher total solute transport.
 
-- The transport behavior remained predominantly diffusion-driven over most investigated parameter ranges. The inlet indoxyl sulfate concentration had the strongest influence on clearance, followed by the dialysate flow rate, whereas blood flow rate and moderate changes in Vmax produced comparatively limited effects.
+- Transport remained predominantly diffusion-limited over most of the investigated parameter range. Clearance showed only weak sensitivity to Vmax up to approximately 10^7–10^8 μmol/(L·min), while the inlet indoxyl sulfate concentration had by far the strongest effect on clearance, followed by the dialysate flow rate. In contrast, changes in blood flow rate and moderate variations in Vmax produced only minor clearance changes.
+  
+-  At very high transporter capacities (Vmax ≥ 10^8 μmol/(L·min)), the system transitioned from a diffusion-limited regime to a blood-supply-limited regime. Transporters depleted toxin near the blood–membrane interface faster than it could be replenished from the bulk blood compartment, reducing the local concentration gradient driving uptake.
 
-- Active Michaelis--Menten transport contributed only minimally at Vmax = 10^6 μmol/(L·min), but became increasingly important once Vmax ≥ 10^8 μmol/(L·min).
+- Active Michaelis–Menten transport contributed negligibly at Vmax = 10^6 μmol/(L·min), where transport was governed almost entirely by passive diffusion. Significant contributions from active transport only became apparent once Vmax exceeded approximately 10^8 μmol/(L·min), consistent with the transition from a diffusion-limited regime toward a blood-supply-limited regime.
 
-- Relative to the corresponding single-fiber configuration, the inside-out multifiber geometry showed an approximately linear increase in total clearance with increasing fiber number. In contrast, the outside-in multifiber geometry exhibited substantially weaker clearance scaling relative to its single-fiber counterpart, owing to reduced blood-to-membrane concentration gradients that developed in the multifiber configuration.
+- Compared with the corresponding single-fiber configuration, the inside-out multifiber geometry exhibited an approximately proportional increase in total clearance with increasing fiber number, indicating that the individual fibers operated largely independently. In contrast, the outside-in multifiber geometry showed substantially weaker scaling because toxin extraction from a shared blood compartment reduced the blood-to-membrane concentration gradients and therefore the driving force for transport.
 
 ---
 
