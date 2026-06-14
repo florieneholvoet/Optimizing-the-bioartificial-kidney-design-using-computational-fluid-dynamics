@@ -321,7 +321,7 @@ The figure numbering and references used throughout this repository correspond d
 
 The COMSOL Multiphysics model files used in this work are available separately and can be downloaded from the following link:
 
-https://ugentbe-my.sharepoint.com/:u:/r/personal/floriene_holvoet_ugent_be/Documents/Master%20thesis%20-%20CFD%20modelling%20BAK/comsol_files.zip?csf=1&web=1&e=rV3Xd5
+https://ugentbe-my.sharepoint.com/:u:/r/personal/floriene_holvoet_ugent_be/Documents/Master%20thesis%20-%20CFD%20modelling%20BAK/final%20configurations/final%20configurations.zip?csf=1&web=1&e=S3uOMR
 
 | Figure | Description | Python script |
 |---|---|---|
