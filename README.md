@@ -317,6 +317,10 @@ A PDF version of the complete master thesis is included in this repository and c
 
 The figure numbering and references used throughout this repository correspond directly to those in the thesis.
 
+The COMSOL Multiphysics model files used in this work are available separately and can be downloaded from the following link:
+
+https://ugentbe-my.sharepoint.com/:u:/r/personal/floriene_holvoet_ugent_be/Documents/Master%20thesis%20-%20CFD%20modelling%20BAK/comsol_files.zip?csf=1&web=1&e=rV3Xd5
+
 | Figure | Description | Python script |
 |---|---|---|
 | `Figure 8.6` | Mesh sensitivity analysis | `src/mesh_sensitivity_analysis.py` |
