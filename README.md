@@ -85,7 +85,7 @@ Three hollow-fiber configurations were investigated:
 |---|---|
 | Inside-out | Blood flows through the lumen while dialysate occupies the outer shell |
 | Outside-in | Blood occupies the outer shell while dialysate flows through the lumen |
-| Adjusted outside-in | Volume-matched variant of the outside-in geometry |
+| Adjusted outside-in | Modified outside-in geometry with the blood compartment volume matched to the blood compartment volume of the inside-out configuration |
 
 The computational domain consisted of four compartments:
 - blood,
