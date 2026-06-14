@@ -313,7 +313,7 @@ The figures included in this repository were generated from data exported from C
 All Python scripts are located in the src folder. The required input data files can be found in the data folder, organized under the corresponding Python script name. Each subfolder contains the .txt files needed to run the associated Python code and reproduce the figures.
 
 A PDF version of the complete master thesis is included in this repository and can be found at:
-`thesis/Master_Thesis_Floriene_Holvoet.pdf`
+`thesis/masterproef-Floriene_Holvoet.pdf`
 
 The figure numbering and references used throughout this repository correspond directly to those in the thesis.
 
