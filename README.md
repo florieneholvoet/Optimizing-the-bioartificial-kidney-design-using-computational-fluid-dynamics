@@ -67,7 +67,7 @@ This project addresses the following research questions:
 
 2. What is the effect of cocurrent and countercurrent dialysate flow on clearance performance?
 
-3. How does blood-volume scaling affect the comparison between inside-out and outside-in configurations?
+3. How do changes in IS concentration, blood flow rate, dialysate flow rate, and Michaelis--Menten uptake capacity influence transport and clearance performance?
 
 4. What is the contribution of active Michaelis–Menten transport relative to passive diffusion?
 
