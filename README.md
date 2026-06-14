@@ -214,7 +214,7 @@ A split cell-layer model was also investigated to distinguish between basolatera
 
 # Numerical Implementation
 
-Simulations were performed in COMSOL Multiphysics 6.3 using time-dependent studies.
+Simulations were performed in COMSOL Multiphysics 6.3 using time-dependent studies. To improve computational efficiency, studies were separated into multiple sequential solution steps, allowing intermediate results to be reused in subsequent calculations without affecting the final solution.
 
 The nonlinear systems were solved using:
 - fully coupled formulation,
@@ -224,6 +224,8 @@ The nonlinear systems were solved using:
 For multifiber simulations, a two-step strategy was used:
 1. stationary solution of the laminar flow field,
 2. time-dependent solution of species transport.
+
+This segregated study approach reduced computational cost while producing results equivalent to those obtained from a single combined study.
 
 Mesh independence was verified through mesh sensitivity analysis for all configurations.
 
