@@ -25,7 +25,7 @@ The simulations evaluate:
 - multifiber interactions,
 - and the contribution of active transport mechanisms.
 
-Post-processing were performed in Python.
+Post-processing was performed in Python.
 
 ---
 
