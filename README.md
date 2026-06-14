@@ -6,7 +6,7 @@
 - Prof. Dr. ir. Aurélie Carlier²  
 
 **Counsellors:**  
-- Leyla Noroozbabaee²  
+- Dr. Leyla Noroozbabaee²  
 - Jessie Duquesne¹  
 
 ¹ Ghent University  
